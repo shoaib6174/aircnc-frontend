@@ -1,0 +1,7 @@
+.guestNo{
+    display: flex;
+    justify-content: space-between;
+}
+.booking-form{
+    width: 25vw;
+}

@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Homepage from './Components/Homepage/Homepage';
+import HotelSelection from './Components/HotelSelection/HotelSelection';
+import Hotel from './Components/Hotel/Hotel';
+import CheckoutPage from './Components/CheckoutPage/CheckoutPage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={()=>window.location.href='/'}> Return to Homepage</button> <br/>
+
+    
+          <Switch>
+            <Route exact path="/" component={Homepage} />
+            <Route  path="/hotelSelection/:guestsNo/:arrival/:departure" component={HotelSelection} />
+            <Route  path="/hotel/:guestsNo/:hotelid/:arrival/:departure" component={Hotel} />
+            <Route  path="/checkout/:id/:guestsNo/:arrival/:departure" component={CheckoutPage} />
+          </Switch>
+   
     </div>
   );
 }

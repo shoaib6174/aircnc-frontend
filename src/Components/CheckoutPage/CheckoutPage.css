@@ -1,0 +1,8 @@
+.checkout-page{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.payment-block{
+    min-width: 300px;
+}
