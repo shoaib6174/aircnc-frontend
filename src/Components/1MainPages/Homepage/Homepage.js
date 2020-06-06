@@ -4,7 +4,7 @@ import BookingForm from '../../BookingForm/BookingForm';
 
 const Homepage = () => {
     return (
-        <div>
+        <div className='homepage-container'>
             <BookingForm/>
         </div>
     );

@@ -14,7 +14,7 @@ const BookingForm = () => {
     })
     const {location, arrival, departure, adults,children,babies} = formData
 
-
+    const guestType = ['adults','children','babies']
     const handleChange = (e)=>{
         setFormData({
 			...formData,
@@ -44,7 +44,7 @@ const BookingForm = () => {
     return (
         <div className='booking-form'>
             <div className="input-item">
-                <label htmlFor="location">Location</label>
+                <label htmlFor="location">Location:</label>
                 <input 
                     type="text" 
                     name='location' 
@@ -54,7 +54,7 @@ const BookingForm = () => {
                 />
             </div>
             <div className="input-item">
-                <label htmlFor="arrival">arrival</label>
+                <label htmlFor="arrival">Arrival:</label>
                 <input 
                     type="date" 
                     name='arrival' 
@@ -63,7 +63,7 @@ const BookingForm = () => {
                 />
             </div>
             <div className="input-item">
-                <label htmlFor="departure">departure</label>
+                <label htmlFor="departure">Departure:</label>
                 <input 
                     type="date" 
                     name='departure' 
@@ -101,21 +101,25 @@ const BookingForm = () => {
                     </div>
                 </div>
             </div>
-            <div className='input-item'>
+            {guestType.map(g=>{
+                return <div>
+                    <div className='input-item'>
                 <div className='guestNo'>
                     <div className='guestType'>
-                        Babies
+                        {g}
                     </div>
                     <div className="guestCount">
                          <span
-                            onClick={()=>minusGuest('babies')}
-                        >-</span>  {babies}
+                            onClick={()=>minusGuest(g)}
+                        >-</span>  {formData[g]}
                         <span 
-                        onClick={()=>addGuest('babies')}
+                        onClick={()=>addGuest(g)}
                         >+</span> 
                     </div>
                 </div>
             </div>
+                    </div>
+            })}
             <div>
                 <button onClick={handleSearch} > Search</button>
             </div>
