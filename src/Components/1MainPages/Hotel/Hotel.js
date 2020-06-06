@@ -1,7 +1,7 @@
 import React from 'react';
 import './Hotel.css'
 import { useParams, useHistory } from 'react-router-dom';
-import InfoCard from '../InfoCard/InfoCard';
+import InfoCard from '../../InfoCard/InfoCard';
 
 const Hotel = () => {
     const {hotelid,guestsNo,arrival,departure} = useParams()

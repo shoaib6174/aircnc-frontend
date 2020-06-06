@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './CheckoutPage.css'
 import { useParams } from 'react-router-dom';
-import InfoCard from '../InfoCard/InfoCard';
-import WhosComing from '../WhosComing/WhosComing'
-import Rules from '../Rules/Rules'
-import Payment from '../Payment/Payment'
+import InfoCard from '../../InfoCard/InfoCard';
+import WhosComing from '../../WhosComing/WhosComing'
+import Rules from '../../Rules/Rules'
+import Payment from '../../Payment/Payment'
 import {loadStripe} from '@stripe/stripe-js';
 import {
   Elements
@@ -53,9 +53,7 @@ const CheckoutPage = () => {
 
 //don't change below this
 
-    useEffect(()=>{
-        console.log(payLoad)
-    },[payLoad])
+    
     const hideShow = (type) =>{
         if(type === 'rules'){
             setShowRules(false)

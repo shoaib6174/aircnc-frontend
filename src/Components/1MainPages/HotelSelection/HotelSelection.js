@@ -1,7 +1,7 @@
 import React from 'react';
 import './HotelSelection.css'
 import { useParams, useHistory } from 'react-router-dom';
-import HotelCard from '../HotelCard/HotelCard';
+import HotelCard from '../../HotelCard/HotelCard';
 const HotelSelection = () => {
 
     const {guestsNo,arrival,departure} = useParams()

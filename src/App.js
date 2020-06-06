@@ -6,10 +6,10 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Homepage from './Components/Homepage/Homepage';
-import HotelSelection from './Components/HotelSelection/HotelSelection';
-import Hotel from './Components/Hotel/Hotel';
-import CheckoutPage from './Components/CheckoutPage/CheckoutPage';
+import Homepage from './Components/1MainPages/Homepage/Homepage';
+import HotelSelection from './Components/1MainPages/HotelSelection/HotelSelection';
+import Hotel from './Components/1MainPages/Hotel/Hotel';
+import CheckoutPage from './Components/1MainPages/CheckoutPage/CheckoutPage';
 
 function App() {
   return (
