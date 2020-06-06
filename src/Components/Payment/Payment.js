@@ -27,8 +27,9 @@ const Payment = () => {
         }
         else{
             setCardError(null);
-            const payment = {id: paymentMethod.id, last4: paymentMethod.card.last4 }
+            const payment = {status:'paid',id: paymentMethod.id, last4: paymentMethod.card.last4 }
             setCardDetails(paymentMethod);
+            
         }
       };
 
@@ -36,19 +37,21 @@ const Payment = () => {
 
     return (
         <div>
-            Payment
+            <h3>Payment</h3>
+            <p>Safe money transfer using your bank account. Visa , MasterCard Discover, American Express</p>
+            <br/>
             <form onSubmit={handleSubmit}>
-      <CardElement />
-      <button type="submit" disabled={!stripe}>
-        Pay
-      </button>
-      {
-          cardError && <p style={{color:'red'}}> {cardError} </p>
-      }
-      {
-          cardDetails && <p style={{color:'green'}}>Payment Successful </p>
-      }
-    </form>
+              <CardElement /> <br/>
+              <button type="submit" disabled={!stripe}>
+                Pay
+              </button>
+              {
+                  cardError && <p style={{color:'red'}}> {cardError} </p>
+              }
+              {
+                  cardDetails && <p style={{color:'green'}}>Payment Successful </p>
+              }
+            </form>
         </div>
     );
 };

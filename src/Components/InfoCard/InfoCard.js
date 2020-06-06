@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './InfoCard.css'
 import { useParams, useHistory } from 'react-router-dom';
-const InfoCard = () => {
+const InfoCard = (props) => {
     const {hotelid,guestsNo,arrival,departure} = useParams()
-    const price = 100
+    const {price, rating} = props
+    
     const duration = () =>{
         const date1 = new Date(arrival);
         const date2 = new Date(departure);
@@ -15,7 +16,8 @@ const InfoCard = () => {
     return (
         <div className='info-card'>
             <div>
-                <p>Room Charge: ${price}/day</p>
+                Room Charge: ${price}/day <br/>
+                Rating: {rating} <br/>
                 Duration: <br/>
                 From <input type="date" value={arrival}/> <br/>
                 To <input type="date" value={departure}/> <br/>

@@ -21,7 +21,7 @@ function App() {
             <Route exact path="/" component={Homepage} />
             <Route  path="/hotelSelection/:guestsNo/:arrival/:departure" component={HotelSelection} />
             <Route  path="/hotel/:guestsNo/:hotelid/:arrival/:departure" component={Hotel} />
-            <Route  path="/checkout/:id/:guestsNo/:arrival/:departure" component={CheckoutPage} />
+            <Route  path="/checkout/:hotelid/:guestsNo/:arrival/:departure" component={CheckoutPage} />
           </Switch>
    
     </div>

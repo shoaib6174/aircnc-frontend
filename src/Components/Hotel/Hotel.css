@@ -1,3 +1,10 @@
 .hotel{
     display: flex;
 }
+p{
+    color: darkgray;
+}
+.slightly-bold{
+    font-weight: 700;
+    color: gray;
+}

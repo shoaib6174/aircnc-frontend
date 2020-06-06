@@ -38,9 +38,7 @@ const BookingForm = () => {
     }
     const history = useHistory()
     const handleSearch =()=>{
-        console.log(formData)
         const guestsNo = adults + children + babies
-        console.log(guestsNo)
         history.push(`/hotelSelection/${guestsNo}/${arrival}/${departure}`)
     }
     return (
