@@ -48,6 +48,20 @@ const CheckoutPage = () => {
         paymentData
     }
 
+    //backend dev added this code to pass payload to DB
+    fetch('https://shrouded-badlands-14433.herokuapp.com/reservationInfo',{
+        method: 'POST',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert('Your details successfully sent');
+       
+      })
+
 
 
 
