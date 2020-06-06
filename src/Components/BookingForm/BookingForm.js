@@ -71,55 +71,27 @@ const BookingForm = () => {
                     onChange={handleChange} 
                 />
             </div>
-            <div className='input-item'>
-                <div className='guestNo'>
-                    <div className='guestType'>
-                        Adults
-                    </div>
-                    <div className="guestCount">
-                         <span
-                            onClick={()=>minusGuest('adults')}
-                        >-</span>   {adults}
-                        <span 
-                        onClick={()=>addGuest('adults')}
-                        >+</span>  
-                    </div>
-                </div>
-            </div>
-            <div className='input-item'>
-                <div className='guestNo'>
-                    <div className='guestType'>
-                        children
-                    </div>
-                    <div className="guestCount">
-                         <span
-                            onClick={()=>minusGuest('children')}
-                        >-</span> {children}
-                        <span 
-                        onClick={()=>addGuest('children')}
-                        >+</span>  
+            <div className='guest-type'> 
+                {guestType.map(g=>{
+                    return <div>
+                        <div className='input-item'>
+                    <div className='guestNo'>
+                        <div className='guestType'>
+                            {g}
+                        </div>
+                        <div className="guestCount">
+                            <span
+                                onClick={()=>minusGuest(g)}
+                            >-</span>  {formData[g]}
+                            <span 
+                            onClick={()=>addGuest(g)}
+                            >+</span> 
+                        </div>
                     </div>
                 </div>
+                        </div>
+                })}
             </div>
-            {guestType.map(g=>{
-                return <div>
-                    <div className='input-item'>
-                <div className='guestNo'>
-                    <div className='guestType'>
-                        {g}
-                    </div>
-                    <div className="guestCount">
-                         <span
-                            onClick={()=>minusGuest(g)}
-                        >-</span>  {formData[g]}
-                        <span 
-                        onClick={()=>addGuest(g)}
-                        >+</span> 
-                    </div>
-                </div>
-            </div>
-                    </div>
-            })}
             <div>
                 <button onClick={handleSearch} > Search</button>
             </div>

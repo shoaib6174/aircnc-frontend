@@ -1,0 +1,9 @@
+.homepage-container{
+    margin: 50px 35%;
+}
+
+@media (max-width: 858px){
+    .homepage-container{
+      margin: 20px 10%;
+    }
+}

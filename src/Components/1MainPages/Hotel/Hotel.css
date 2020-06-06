@@ -1,5 +1,12 @@
 .hotel{
+    width: 100%;
     display: flex;
+    justify-content: space-evenly;
+}
+.hotel-description{
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 50%;
 }
 p{
     color: darkgray;

@@ -32,12 +32,14 @@ const Hotel = () => {
 
     return (
         <div className="hotel">
+            
             <div className='hotel-description'>
                 <div>
-                    <strong> {name} </strong>
-                    <p>Dhaka Bangladesh</p>
+                    <h2> {name} </h2>
+                    <p>Dhaka Bangladesh</p> <br/>
                     <p>4 Guests   2 bedrooms    2 beds  2 baths</p>
                 </div>
+                <br/>
                 <div>
                     <div>
                         <div className='slightly-bold'>
@@ -47,16 +49,8 @@ const Hotel = () => {
                             You will have the whole apartment to yourself. 
                             </p>
                         </div>
-                    </div>
-                    <div>
-                        <div className='slightly-bold'>
-                            Entire Home
-                        </div>
-                        <div> <p>
-                            You will have the whole apartment to yourself. 
-                            </p>
-                        </div>
-                    </div><div>
+                    </div> <br/>
+                   <div>
                         <div className='slightly-bold'>
                             Self Check-in
                         </div>
@@ -64,7 +58,8 @@ const Hotel = () => {
                             You can check-in with the doorman
                             </p>
                         </div>
-                    </div><div>
+                    </div> <br/>
+                    <div>
                         <div className='slightly-bold'>
                             Sparkling clean
                         </div>
@@ -78,18 +73,20 @@ const Hotel = () => {
                     <p>
                     Situated 400 m from Independent University Bangladesh, Blue Star Sun Service Apartment features accommodation with a shared lounge, a terrace and a 24-hour front desk for your convenience.
 
-Each unit features a balcony, a fully equipped kitchen with an oven, a fireplace, a seating area with a sofa, a TV and a private bathroom with shower. <br/>
+                    Each unit features a balcony, a fully equipped kitchen with an oven, a fireplace, a seating area with a sofa, a TV and a private bathroom with shower. <br/>
 
-A à la carte breakfast is available each morning at the apartment. <br/>
+                    A à la carte breakfast is available each morning at the apartment. <br/>
 
-A car rental service is available at Blue Star Sun Service Apartment.
+                    A car rental service is available at Blue Star Sun Service Apartment.
                     </p>
                 </div>
             </div>
+            
 
             <div className='reserve-card'>
+                <button onClick={reserve} >Book Now</button>
                 <InfoCard price={price} rating={rating} />
-                <button onClick={reserve} >Reserve</button>
+                
             </div>
         </div>
     );

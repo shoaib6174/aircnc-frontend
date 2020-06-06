@@ -1,0 +1,14 @@
+.who-container input{
+    
+    height: 30px;
+    padding: 10px 35px;
+    margin: 5px;
+    
+}
+
+input{
+    border: none;
+    border-radius: 10px;
+    background: lightgrey;
+    padding: 5px 10px;
+}

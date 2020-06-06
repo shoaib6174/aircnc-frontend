@@ -49,7 +49,8 @@ const CheckoutPage = () => {
     }
 
     //backend dev added this code to pass payload to DB
-    fetch('https://shrouded-badlands-14433.herokuapp.com/reservationInfo',{
+    const submitData = ()=>{
+        fetch('https://shrouded-badlands-14433.herokuapp.com/reservationInfo',{
         method: 'POST',
         headers:{
             'Content-Type': 'application/json'
@@ -61,6 +62,7 @@ const CheckoutPage = () => {
         console.log('sent', data);
        
       })
+    }
 
 
 
@@ -85,8 +87,7 @@ const CheckoutPage = () => {
 
     return (
         <div className='checkout-page'>
-            <div>
-            <div>
+            <div style={{textAlign: 'center'}} > 
                    <span style={{fontWeight: showrules? '700' : ''}}> 
                     Reviews house rules 
                    </span> >
@@ -95,30 +96,34 @@ const CheckoutPage = () => {
                    </span> >
                    <span style={{fontWeight: showPayment? '700' : ''}}> 
                    Confirm and pay 
-                   </span> 
+                   </span> <br/>
             </div>
-            <div className='checkout-description'>
-                    {showrules ? 
-                    <div>
-                        <Rules  hotelInfo={hotelsInfo[hotelid]} /> 
-                        <button onClick={()=>hideShow('rules')} >Continue</button>
+            
+            <div className='checkout-container'>
+                <div className='checkout-description'>
+                        {showrules ? 
+                        <div>
+                            <Rules  hotelInfo={hotelsInfo[hotelid]} /> 
+                            <button onClick={()=>hideShow('rules')} >Continue</button>
+                        </div>
+                        
+                        : ''}
+                        {showWhosComing ? 
+                        <div>
+                            <WhosComing changeData = {setClientData} submitData={submitData} hideShow={hideShow} /> 
+                        </div> : '' }
+                        {showPayment ? <div className='payment-block'>
+                            <Elements stripe={stripePromise}>
+                                <Payment />
+                            </Elements>
+                        </div>  : '' }
                     </div>
-                    
-                    : ''}
-                    {showWhosComing ? 
-                    <div>
-                        <WhosComing changeData = {setClientData} hideShow={hideShow} /> 
-                    </div> : '' }
-                    {showPayment ? <div className='payment-block'>
-                        <Elements stripe={stripePromise}>
-                            <Payment />
-                        </Elements>
-                    </div>  : '' }
+                    <div className className='checkout-card'>
+                        <InfoCard price={hotelsInfo[hotelid]['price']} rating={hotelsInfo[hotelid]['rating']}  />
+                    </div>
                 </div>
-            </div>
-            <div className className='checkout-card'>
-                    <InfoCard price={hotelsInfo[hotelid]['price']} rating={hotelsInfo[hotelid]['rating']}  />
-            </div>
+                
+            
         </div>
     );
 };
