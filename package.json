@@ -2,6 +2,7 @@
   "name": "aircnc",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://shrouded-badlands-14433.herokuapp.com/reservationInfo",
   "dependencies": {
     "@stripe/react-stripe-js": "^1.1.2",
     "@stripe/stripe-js": "^1.7.0",

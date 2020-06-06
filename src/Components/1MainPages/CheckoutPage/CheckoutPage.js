@@ -54,11 +54,11 @@ const CheckoutPage = () => {
         headers:{
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payLoad)
       })
       .then(res => res.json())
       .then(data => {
-        alert('Your details successfully sent');
+        console.log('sent', data);
        
       })
 
